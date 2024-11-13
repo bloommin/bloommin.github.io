@@ -68,14 +68,14 @@ script_includes:
             {% if authors %}
               {% for author in authors %}
                 {% if site.data.authors[author].url -%}
-                  <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
+                  <a href="{{ site.data.authors[author].url }}" target="_blank">{{ site.data.authors[author].name }}</a>
                 {%- else -%}
                   {{ site.data.authors[author].name }}
                 {%- endif %}
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
               {% endfor %}
             {% else %}
-              <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+              <a href="{{ site.social.links[0] }}" target="_blank">{{ site.social.name }}</a>
             {% endif %}
           </em>
         </span>
@@ -162,7 +162,7 @@ script_includes:
       <div class="license-wrapper">
         {% if site.data.locales[lang].copyright.license.template %}
           {% capture _replacement %}
-        <a href="{{ site.data.locales[lang].copyright.license.link }}">
+        <a href="{{ site.data.locales[lang].copyright.license.link }}" target="_blank">
           {{ site.data.locales[lang].copyright.license.name }}
         </a>
         {% endcapture %}
